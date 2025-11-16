@@ -1,0 +1,70 @@
+import { Moon, Sun } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+
+const ThemeToggle = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const storedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (storedTheme === "dark" || (!storedTheme && systemPrefersDark)) {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      setIsDarkMode(false);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
+  };
+
+  if (!mounted) return null;
+
+  return (
+    <button
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+      className={cn(
+        "fixed top-4 right-4 z-50",
+        "bg-transparent border-none shadow-none",
+        "focus:outline-none focus:ring-0",
+        "hover:opacity-80",
+        "transition-transform duration-300 hover:scale-110"
+      )}
+      style={{
+        position: 'fixed',
+        top: '2rem',
+        right: '1rem',
+        zIndex: 50,
+        background: "transparent",
+        border: "none",
+        boxShadow: "none",
+        outline: "none",
+      }}
+    >
+      {isDarkMode ? (
+        <Sun className="h-6 w-6" style={{ color: "yellow" }} />
+      ) : (
+        <Moon className="h-6 w-6" style={{ color: "#374151" }} />
+      )}
+    </button>
+  );
+};
+
+export default ThemeToggle;
