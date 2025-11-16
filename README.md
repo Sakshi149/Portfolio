@@ -61,9 +61,8 @@ Auto resets form fields
 
 🌐 Live Demo
 
-Add your deployed link here:
-
-https://your-portfolio-url.vercel.app
+Deployed link is here:
+https://portfolio-ten-opal-9e0smn40qw.vercel.app/
 
 📞 Connect With Me
 
