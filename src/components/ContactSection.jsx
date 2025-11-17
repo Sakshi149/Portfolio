@@ -17,25 +17,23 @@ export const ContactSection = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    // WhatsApp message format
-    const whatsappText = `Hi, I am ${name} (${email}).\n\nMessage:\n${message}`;
+    const subject = `Portfolio Contact Form Message from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
-    // Open WhatsApp chat
-    window.open(
-      `https://wa.me/917720830247?text=${encodeURIComponent(whatsappText)}`,
-      "_blank"
-    );
+    window.location.href = `mailto:chavan06sakshi@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
 
     setTimeout(() => {
       toast({
         title: "Message Sent!",
         description:
-          "Thank you for reaching out. I'll get back to you soon on WhatsApp.",
+          "Thank you for reaching out. Your email draft is ready to be sent.",
       });
 
       form.reset();
       setIsSubmitting(false);
-    }, 1500);
+    }, 1000);
   };
 
   return (
@@ -108,8 +106,10 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium text-left">LinkedIn</h4>
                   <a
-                    href="www.linkedin.com/in/sakshi-chavan-6ba5a4318"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    href="https://www.linkedin.com/in/sakshi-chavan-6ba5a4318"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors text-left break-all"
                   >
                     www.linkedin.com/in/sakshi-chavan-6ba5a4318{" "}
                   </a>

@@ -41,22 +41,8 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       aria-label="Toggle theme"
       className={cn(
-        "fixed top-4 right-4 z-50",
-        "bg-transparent border-none shadow-none",
-        "focus:outline-none focus:ring-0",
-        "hover:opacity-80",
-        "transition-transform duration-300 hover:scale-110"
+        "p-2 rounded-full bg-transparent hover:opacity-80 transition-transform duration-300 hover:scale-110"
       )}
-      style={{
-        position: 'fixed',
-        top: '2rem',
-        right: '1rem',
-        zIndex: 50,
-        background: "transparent",
-        border: "none",
-        boxShadow: "none",
-        outline: "none",
-      }}
     >
       {isDarkMode ? (
         <Sun className="h-6 w-6" style={{ color: "yellow" }} />
