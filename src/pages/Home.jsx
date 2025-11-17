@@ -12,9 +12,6 @@ import { Footer } from "../components/Footer";
 const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-300">
-      {/* Theme Toggle */}
-      <ThemeToggle />
-
       {/* Background Effects */}
       <StarBackground />
 

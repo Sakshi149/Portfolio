@@ -9,6 +9,7 @@ const projects = [
       "A personal portfolio website to showcase projects and skills.",
     image: "/projects/portfolio-website.png",
     tags: ["React", "Tailwind CSS", "Vite"],
+    demoUrl: "https://portfolio-ten-opal-9e0smn40qw.vercel.app/",
     githuburl: "https://github.com/Sakshi149/Portfolio.git",
   },
   {
@@ -111,13 +112,25 @@ export const ProjectSection = () => {
               </p>
               <div className="flex justify-between items-center">
                 <div className="flex space-x-3">
-                  <a
-                    href={project.githuburl}
-                    target="_blank"
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  >
-                    <Github size={20} />
-                  </a>
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
+
+                  {project.githuburl && (
+                    <a
+                      href={project.githuburl}
+                      target="_blank"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <Github size={20} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

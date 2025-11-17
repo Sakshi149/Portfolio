@@ -9,9 +9,7 @@ export const AboutSection = () => {
           About <span className="text-purple-400">Me</span>
         </h2>
 
-        {/* 2 columns only: left (text+buttons), right (cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* LEFT: text + buttons */}
           <div className="space-y-6 text-center md:text-left">
             <h3 className="text-2xl font-semibold">Curious Full Stack Developer | Continuously Evolving in the World of Web Technologies</h3>
 
@@ -36,7 +34,6 @@ export const AboutSection = () => {
               clean, maintainable code with a focus on performance and security.
             </p>
 
-            {/* Buttons live inside the left column */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
               <a href="#contact" className="cosmic-button">
                 Get in Touch
@@ -51,7 +48,6 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          {/* RIGHT: stacked cards */}
           <div className="grid grid-cols-1 gap-6">
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
