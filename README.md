@@ -63,7 +63,7 @@ Auto resets form fields
 
 Add your deployed link here:
 
-https://your-portfolio-url.vercel.app
+https://portfolio-ten-opal-9e0smn40qw.vercel.app/
 
 📞 Connect With Me
 
